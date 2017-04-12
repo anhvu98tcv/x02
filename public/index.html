@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DK | VuApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/style.css">
+
+  </head>
+
+  <body>
+    <div>
+      <form action="" id="send-data-form">
+        Nhap dia diem <input type="text" name="location" autofocus autocomplete="off"/>
+        <input type="submit" value="Gửi">
+      </form>
+      <div class="chat__main">
+        <ol id="messages" class="chat__messages"></ol>
+        <button id="send-location">Gửi địa điểm hiện tại</button>
+
+      </div>
+      <div id="abc"></div>
+      <div id="dia-diem-nhap"></div>
+
+
+
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/libs/jquery.min.js"></script>
+      <script src="/js/libs/mustache.js"></script>
+      <script src="/js/libs/deparam.js"></script>
+      <script src="/js/index.js"></script>
+
+    </div>
+  </body>
+</html>
