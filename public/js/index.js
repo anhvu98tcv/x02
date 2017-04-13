@@ -40,6 +40,21 @@ jQuery('#send-data-form').on('submit', function(e){
   });
 });
 
+jQuery('#gui-du-lieu').on('submit', function(e){
+  e.preventDefault();
+
+  var COinput = jQuery('[name=nong-do-co]');
+  var Ninput = jQuery('[name=tieng-on]');
+
+  socket.emit('guiDuLieu', {
+    COinput : COinput.val(),
+    Ninput: Ninput.val()
+  }, function () {
+    COinput.val('');
+    Ninput.val('');
+  });
+});
+
 socket.on('sendLocation', function(location){
   console.log(location);
   $('#dia-diem-nhap').append(`<p>${location}</p>`);
