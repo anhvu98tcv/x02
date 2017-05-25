@@ -1,13 +1,31 @@
 //Cac moc cua nong do CO
 const CO_THAP = 5;
+const CO_THAP_PHAI = 11;
+
+const CO_BT_TRAI = 7;
 const CO_BT = 15;
+const CO_BT_PHAI = 22;
+
+const CO_CAO_TRAI = 17;
 const CO_CAO = 25;
+const CO_CAO_PHAI = 32;
+
+const CO_RAT_CAO_TRAI = 29;
 const CO_RAT_CAO = 35;
 
+
 //Cac moc cua tieng on
+
 const N_BT = 50;
+const N_BT_PHAI = 58;
+
+const N_ON_TRAI = 53;
 const N_ON = 60;
+const N_ON_PHAI = 66;
+
+const N_RAT_ON_TRAI = 61;
 const N_RAT_ON = 70;
+
 
 var conoise  = ( COinput, Ninput , callback) => {
   var nuyCO_thap = 0;
@@ -18,30 +36,47 @@ var conoise  = ( COinput, Ninput , callback) => {
   var nuyN_on = 0;
   var nuyN_rat_on = 0;
 
-  if (COinput <= 5){
+  if (COinput < CO_THAP){
     nuyCO_thap = 1;
-  } else if (COinput > 5 && COinput <= 15){
-    nuyCO_thap = (CO_BT - COinput)/(CO_BT - CO_THAP);
-    nuyCO_bt = 1 - nuyCO_thap;
-  } else if (COinput > 15 && COinput <= 25){
-    nuyCO_bt = (CO_CAO - COinput)/(CO_CAO - CO_BT);
-    nuyCO_cao = 1 - nuyCO_bt;
-  } else if (COinput > 25 && COinput <= 35){
-    nuyCO_cao = ((CO_RAT_CAO - COinput)/(CO_RAT_CAO - CO_CAO));
-    nuyCO_rat_cao = 1 - nuyCO_cao;
-  } else {
+  }
+  if (COinput >= CO_THAP && COinput < CO_THAP_PHAI){
+    nuyCO_thap = (CO_THAP_PHAI - COinput)/(CO_THAP_PHAI - CO_THAP);
+  }
+  if (COinput >= CO_BT_TRAI && COinput < CO_BT){
+    nuyCO_bt = (CO_BT - COinput)/(CO_BT - CO_BT_TRAI);
+  }
+  if (COinput >= CO_BT && COinput < CO_BT_PHAI){
+    nuyCO_bt = (CO_BT_PHAI - COinput)/(CO_BT_PHAI - CO_BT);
+  }
+  if (COinput >= CO_CAO_TRAI && COinput < CO_CAO){
+    nuyCO_cao = (CO_CAO - COinput)/(CO_CAO - CO_CAO_TRAI);
+  }
+  if (COinput >= CO_CAO && COinput < CO_CAO_PHAI){
+    nuyCO_cao = (CO_CAO_PHAI - COinput)/(CO_CAO_PHAI - CO_CAO);
+  }
+  if (COinput >= CO_RAT_CAO_TRAI && COinput < CO_RAT_CAO){
+    nuyCO_rat_cao = (CO_RAT_CAO - COinput)/(CO_RAT_CAO - CO_RAT_CAO_TRAI);
+  }
+  if (COinput >= CO_RAT_CAO ){
     nuyCO_rat_cao = 1;
   }
 
-  if (Ninput <= 50){
+  if (Ninput < N_BT){
     nuyN_bt = 1;
-  } else if (Ninput > 50 && Ninput <= 60){
-    nuyN_bt = (N_ON - Ninput)/(N_ON- N_BT);
-    nuyN_on = 1 - nuyN_bt;
-  } else if (Ninput > 60 && Ninput <= 70){
-    nuyN_on = (N_RAT_ON -  Ninput)/(N_RAT_ON- N_ON);
-    nuyN_rat_on = 1 - nuyN_on;
-  } else {
+  }
+  if (Ninput >= N_BT && Ninput < N_BT_PHAI){
+    nuyN_bt = (N_BT_PHAI - Ninput)/(N_BT_PHAI- N_BT);
+  }
+  if (Ninput >= N_ON_TRAI && Ninput < N_ON){
+    nuyN_on = (N_ON - Ninput)/(N_ON- N_ON_TRAI);
+  }
+  if (Ninput >= N_ON && Ninput < N_ON_PHAI){
+    nuyN_on = (N_ON_PHAI - Ninput)/(N_ON_PHAI- N_ON);
+  }
+  if (Ninput >= N_RAT_ON_TRAI && Ninput < N_RAT_ON){
+    nuyN_rat_on = (N_RAT_ON -  Ninput)/(N_RAT_ON- N_RAT_ON_TRAI);
+  }
+  if (Ninput >= N_RAT_ON){
     nuyN_rat_on = 1;
   }
 
