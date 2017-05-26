@@ -36,45 +36,45 @@ var conoise  = ( COinput, Ninput , callback) => {
   var nuyN_on = 0;
   var nuyN_rat_on = 0;
 
-  if (COinput < CO_THAP){
+  if (COinput <= CO_THAP){
     nuyCO_thap = 1;
   }
-  if (COinput >= CO_THAP && COinput < CO_THAP_PHAI){
+  if (COinput > CO_THAP && COinput < CO_THAP_PHAI){
     nuyCO_thap = (CO_THAP_PHAI - COinput)/(CO_THAP_PHAI - CO_THAP);
   }
-  if (COinput >= CO_BT_TRAI && COinput < CO_BT){
-    nuyCO_bt = (CO_BT - COinput)/(CO_BT - CO_BT_TRAI);
+  if (COinput > CO_BT_TRAI && COinput <= CO_BT){
+    nuyCO_bt = (COinput - CO_BT_TRAI)/(CO_BT - CO_BT_TRAI);
   }
-  if (COinput >= CO_BT && COinput < CO_BT_PHAI){
+  if (COinput > CO_BT && COinput < CO_BT_PHAI){
     nuyCO_bt = (CO_BT_PHAI - COinput)/(CO_BT_PHAI - CO_BT);
   }
-  if (COinput >= CO_CAO_TRAI && COinput < CO_CAO){
-    nuyCO_cao = (CO_CAO - COinput)/(CO_CAO - CO_CAO_TRAI);
+  if (COinput > CO_CAO_TRAI && COinput <= CO_CAO){
+    nuyCO_cao = (COinput - CO_CAO_TRAI)/(CO_CAO - CO_CAO_TRAI);
   }
-  if (COinput >= CO_CAO && COinput < CO_CAO_PHAI){
+  if (COinput > CO_CAO && COinput < CO_CAO_PHAI){
     nuyCO_cao = (CO_CAO_PHAI - COinput)/(CO_CAO_PHAI - CO_CAO);
   }
-  if (COinput >= CO_RAT_CAO_TRAI && COinput < CO_RAT_CAO){
-    nuyCO_rat_cao = (CO_RAT_CAO - COinput)/(CO_RAT_CAO - CO_RAT_CAO_TRAI);
+  if (COinput > CO_RAT_CAO_TRAI && COinput <= CO_RAT_CAO){
+    nuyCO_rat_cao = (COinput - CO_RAT_CAO_TRAI)/(CO_RAT_CAO - CO_RAT_CAO_TRAI);
   }
-  if (COinput >= CO_RAT_CAO ){
+  if (COinput > CO_RAT_CAO ){
     nuyCO_rat_cao = 1;
   }
 
-  if (Ninput < N_BT){
+  if (Ninput <= N_BT){
     nuyN_bt = 1;
   }
-  if (Ninput >= N_BT && Ninput < N_BT_PHAI){
+  if (Ninput > N_BT && Ninput < N_BT_PHAI){
     nuyN_bt = (N_BT_PHAI - Ninput)/(N_BT_PHAI- N_BT);
   }
-  if (Ninput >= N_ON_TRAI && Ninput < N_ON){
-    nuyN_on = (N_ON - Ninput)/(N_ON- N_ON_TRAI);
+  if (Ninput > N_ON_TRAI && Ninput <= N_ON){
+    nuyN_on = (Ninput - N_ON_TRAI)/(N_ON- N_ON_TRAI);
   }
   if (Ninput >= N_ON && Ninput < N_ON_PHAI){
     nuyN_on = (N_ON_PHAI - Ninput)/(N_ON_PHAI- N_ON);
   }
-  if (Ninput >= N_RAT_ON_TRAI && Ninput < N_RAT_ON){
-    nuyN_rat_on = (N_RAT_ON -  Ninput)/(N_RAT_ON- N_RAT_ON_TRAI);
+  if (Ninput >= N_RAT_ON_TRAI && Ninput <= N_RAT_ON){
+    nuyN_rat_on = (Ninput -  N_RAT_ON_TRAI)/(N_RAT_ON- N_RAT_ON_TRAI);
   }
   if (Ninput >= N_RAT_ON){
     nuyN_rat_on = 1;
